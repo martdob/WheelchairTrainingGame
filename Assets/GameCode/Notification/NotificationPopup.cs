@@ -87,6 +87,8 @@ namespace WheelchairTrainingGame.Notification
 
         public void Close()
         {
+            if (isFading) return;
+
             StopAllCoroutines();
 
             isFading = true;

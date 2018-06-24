@@ -18,7 +18,9 @@ namespace WheelchairTrainingGame.Notification
         private List<NotificationPopup> notifications = new List<NotificationPopup>();
 
         private void BroadcastLog(string message, string stackTrace, LogType type)
-        {
+        {            
+            notifications.RemoveAll(item => item == null);
+
             NotificationPopup duplicate = notifications.Find(popup => popup.Type == type && popup.Message == message);
             if (duplicate != null)
             {
@@ -29,10 +31,12 @@ namespace WheelchairTrainingGame.Notification
                 NotificationPopup popupTemplate = Array.Find(templates, template => template.Type == type);
                 if (popupTemplate != null)
                 {
-                    notifications.RemoveAll(item => item == null);
                     if (notifications.Count >= maxNotifications - 1)
                     {
-                        notifications[0].Close();
+                        for (int i = 0; i <= notifications.Count - maxNotifications; i++)
+                        {
+                            Destroy(notifications[i].gameObject);
+                        }
                     }
                     
                     GameObject popupObject = Instantiate(popupTemplate.gameObject, transform, false);
