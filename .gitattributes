@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Treat this files as binary files
+*.asset binary
+*.unity binary
+*.prefab binary
+*.meta binary
+*.md text
