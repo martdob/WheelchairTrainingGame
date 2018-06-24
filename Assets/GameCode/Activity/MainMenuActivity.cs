@@ -19,6 +19,21 @@ namespace WheelchairTrainingGame.Activity
             {
                 QuitApplication();
             }
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                Debug.Log("Je suis une info à " + Time.timeSinceLevelLoad);
+            }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                Debug.LogWarning("Je suis un avertissement à " + Time.timeSinceLevelLoad);
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.LogError("Je suis une erreur à " + Time.timeSinceLevelLoad);
+            }
         }
 
         public void LoadDemoScene(string sceneName)

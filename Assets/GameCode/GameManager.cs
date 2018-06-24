@@ -4,6 +4,7 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WheelchairTrainingGame.Notification;
 using WheelchairTrainingGame.Transition;
 
 namespace WheelchairTrainingGame
@@ -13,7 +14,14 @@ namespace WheelchairTrainingGame
         #region Managers
 
         [SerializeField]
+        private NotificationManager notification;
+        [SerializeField]
         private TransitionManager transition;
+
+        public NotificationManager Notification
+        {
+            get { return notification; }
+        }
 
         public TransitionManager Transition
         {
@@ -74,6 +82,8 @@ namespace WheelchairTrainingGame
             transition.Open(TransitionType.Return);
             yield return new WaitWhile(() => transition.IsFading);
 
+            TerminateAllManagers();
+
 #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
 #else
@@ -96,7 +106,14 @@ namespace WheelchairTrainingGame
 
         private void FindInternalreferences()
         {
+            notification = GetComponentInChildren<NotificationManager>();
             transition = GetComponentInChildren<TransitionManager>();
+        }
+
+        private void InitializeAllManagers()
+        {
+            // Initialize managers here in correct order
+            Notification.Initialize();
         }
 
         private void OnValidate()
@@ -106,6 +123,13 @@ namespace WheelchairTrainingGame
         private void Start()
         {
             FindInternalreferences();
+            InitializeAllManagers();
+        }
+
+        private void TerminateAllManagers()
+        {
+            // Terminate managers here in correct order
+            Notification.Terminate();
         }
 
         #endregion // Internal methods
