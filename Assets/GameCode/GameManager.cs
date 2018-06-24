@@ -4,11 +4,24 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WheelchairTrainingGame.Transition;
 
 namespace WheelchairTrainingGame
 {
     public class GameManager : MonoBehaviour
     {
+        #region Managers
+
+        [SerializeField]
+        private TransitionManager transition;
+
+        public TransitionManager Transition
+        {
+            get { return transition; }
+        }
+
+        #endregion
+
         #region Public methods
 
         public void LoadFirstScene()
@@ -58,7 +71,8 @@ namespace WheelchairTrainingGame
 
         private IEnumerator DelayQuit()
         {
-            yield return new WaitForEndOfFrame();
+            transition.Open(TransitionType.Return);
+            yield return new WaitWhile(() => transition.IsFading);
 
 #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
@@ -69,7 +83,8 @@ namespace WheelchairTrainingGame
 
         private IEnumerator DelaySceneLoad(string sceneName)
         {
-            yield return new WaitForEndOfFrame();
+            transition.Open(sceneName == "MainMenu" ? TransitionType.Return : TransitionType.Loading);
+            yield return new WaitWhile(() => transition.IsFading);
 
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
             asyncLoad.allowSceneActivation = true;
@@ -81,7 +96,7 @@ namespace WheelchairTrainingGame
 
         private void FindInternalreferences()
         {
-            // Nothing
+            transition = GetComponentInChildren<TransitionManager>();
         }
 
         private void OnValidate()
