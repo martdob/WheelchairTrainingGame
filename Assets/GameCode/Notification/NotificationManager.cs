@@ -38,7 +38,7 @@ namespace WheelchairTrainingGame.Notification
                             Destroy(notifications[i].gameObject);
                         }
                     }
-                    
+
                     GameObject popupObject = Instantiate(popupTemplate.gameObject, transform, false);
                     popupObject.SetActive(true);
 
