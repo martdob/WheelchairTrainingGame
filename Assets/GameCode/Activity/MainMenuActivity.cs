@@ -12,8 +12,7 @@ namespace WheelchairTrainingGame.Activity
                 GameManager.Current.Transition.Close();
             }
         }
-
-#if UNITY_EDITOR
+        
         private void Update()
         {
             if(Input.GetButtonDown("B"))
@@ -21,7 +20,6 @@ namespace WheelchairTrainingGame.Activity
                 QuitApplication();
             }
         }
-#endif
 
         public void LoadDemoScene(string sceneName)
         {
