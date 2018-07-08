@@ -277,7 +277,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 62615637}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -485,15 +485,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.105882354, g: 1, b: 1, a: 0.49019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 123eccd4c30644ba7930ad07e7d98a43, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 5587766f050b3f34b88f3c3dd23717be, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -798,6 +798,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 409400712}
+  - component: {fileID: 409400714}
   - component: {fileID: 409400713}
   m_Layer: 5
   m_Name: FemaleTemplate
@@ -839,10 +840,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213ec69b76004ec499d8135518f4a1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activity: {fileID: 1194455564}
   nameText: {fileID: 598412381}
   model:
     Name: 
     Gender: 0
+--- !u!114 &409400714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409400711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 2
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: f038b2c5d42fc9346aa0e25d829c1520,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f8f4b339222a0aa46a369234f99940b3, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: b4ddaacdb84270245a5a5ce7886cda21, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1772529249}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &430180222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1299,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 705411587}
+  - component: {fileID: 705411589}
   - component: {fileID: 705411588}
   m_Layer: 5
   m_Name: MaleTemplate
@@ -1296,10 +1341,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213ec69b76004ec499d8135518f4a1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activity: {fileID: 1194455564}
   nameText: {fileID: 1674902278}
   model:
     Name: 
     Gender: 0
+--- !u!114 &705411589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 705411586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 2
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: f038b2c5d42fc9346aa0e25d829c1520,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f8f4b339222a0aa46a369234f99940b3, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: b4ddaacdb84270245a5a5ce7886cda21, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 91143655}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &742331579
 Prefab:
   m_ObjectHideFlags: 0
@@ -1785,15 +1873,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7137255, b: 0.75686276, a: 0.49019608}
+  m_Color: {r: 1, g: 0.83137256, b: 0.8745098, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 123eccd4c30644ba7930ad07e7d98a43, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 5587766f050b3f34b88f3c3dd23717be, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

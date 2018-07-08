@@ -19,21 +19,6 @@ namespace WheelchairTrainingGame.Activity
             {
                 QuitApplication();
             }
-
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                Debug.Log("Je suis une info à " + Time.timeSinceLevelLoad);
-            }
-
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                Debug.LogWarning("Je suis un avertissement à " + Time.timeSinceLevelLoad);
-            }
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.LogError("Je suis une erreur à " + Time.timeSinceLevelLoad);
-            }
         }
 
         public void LoadDemoScene(string sceneName)
@@ -45,6 +30,11 @@ namespace WheelchairTrainingGame.Activity
         {
             EventSystem.current.SetSelectedGameObject(null);
             GameManager.Current.Quit();
+        }
+
+        public void SelectUser(string userName)
+        {
+            Debug.LogFormat("Utilisateur sélectionné : {0}", userName);
         }
     }
 }

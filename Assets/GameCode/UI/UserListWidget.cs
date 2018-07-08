@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using WheelchairTrainingGame.User;
 
-namespace WheelchairTrainingGame.User
+namespace WheelchairTrainingGame.UI
 {
     public class UserListWidget : MonoBehaviour
     {
