@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0981448a4e42d54439d6ef5cac5fa231, type: 3}
   m_Name: UserList
   m_EditorClassIdentifier: 
+  Users: []

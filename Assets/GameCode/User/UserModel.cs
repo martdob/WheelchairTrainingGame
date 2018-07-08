@@ -3,7 +3,7 @@
     [System.Serializable]
     public class UserModel
     {
-        public Gender Gender;
         public string Name;
+        public Gender Gender;
     }
 }
